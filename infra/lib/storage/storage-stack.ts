@@ -10,8 +10,8 @@ import * as targets from "aws-cdk-lib/aws-route53-targets";
 // import { CdkStack } from "../../BeatButlerAPI/lib/cdk-stack";
 import { Construct } from "constructs";
 
-export class InfraStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps) {
+export class StorageStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     const photoBucket = new s3.Bucket(this, "photoBucket", {
