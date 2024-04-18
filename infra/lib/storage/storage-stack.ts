@@ -11,6 +11,8 @@ import * as targets from "aws-cdk-lib/aws-route53-targets";
 import { Construct } from "constructs";
 
 export class StorageStack extends Stack {
+  public readonly photosBucketArn: string;
+
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -21,5 +23,6 @@ export class StorageStack extends Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       versioned: false,
     });
+    this.photosBucketArn = photoBucket.bucketArn;
   }
 }

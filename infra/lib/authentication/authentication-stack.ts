@@ -1,17 +1,14 @@
-import { Duration, Stack, StackProps } from "aws-cdk-lib";
-import * as route53 from "aws-cdk-lib/aws-route53";
+import { Stack } from "aws-cdk-lib";
 import * as cdk from "aws-cdk-lib";
-import * as iam from "aws-cdk-lib/aws-iam";
-import * as s3 from "aws-cdk-lib/aws-s3";
-import * as ses from "aws-cdk-lib/aws-ses";
-import * as lambda from "aws-cdk-lib/aws-lambda";
-import * as path from "path";
-import * as targets from "aws-cdk-lib/aws-route53-targets";
-// import { CdkStack } from "../../BeatButlerAPI/lib/cdk-stack";
+import * as cognito from "aws-cdk-lib/aws-cognito";
+import * as apigateway from "aws-cdk-lib/aws-apigateway";
+
 import { Construct } from "constructs";
 
-export class InfraStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps) {
-    super(scope, id, props);
+export class AuthenticationStack extends Stack {
+  public readonly auth: apigateway.CognitoUserPoolsAuthorizer;
+
+  constructor(scope: Construct, id: string) {
+    super(scope, id);
   }
 }
